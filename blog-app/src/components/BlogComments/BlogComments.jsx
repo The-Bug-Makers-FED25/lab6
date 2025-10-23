@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 
-export default function BlogComments () {
-    const [comments, setComments] = useState([]);
+export default function BlogComments ({initialComments}) {
+    const [comments, setComments] = useState(initialComments);
     const [newComment, setNewComment] = useState("");
 
     const handleInputChange = (e) => {
@@ -30,8 +30,6 @@ export default function BlogComments () {
                 {comments.map((comment, index) =>(
                     <p key={index}>• {comment}</p>
                 ))}
-                <p>• This guy is kinda cool...</p>
-                <p>• He stole from me.</p>
             </div>
         </>
     )
