@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #37FF8B;
+    --color-pdark: #00a7ac;
+    --color-black: #1a1423;
+    --color-grey: #dee7f7;
+    --color-offwhite: #eff3fb;
+    --color-black: #1a1423;
+    --color-neutral: hsl(220, 60%, 96%);
+    --color-white: #ffffff;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
