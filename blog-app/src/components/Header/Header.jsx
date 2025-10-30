@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 import logo from "../../assets/BugMakersLogo.png"
 
 
@@ -11,9 +11,9 @@ export default function Header() {
             <img className="w-[150px]" src={logo} alt="bug makers logo" />
         </div>
         <nav className="flex gap-2">
-            <a className="m-1 hover:text-primary" href="">Home</a>
-            <a className="m-1 hover:text-primary" href="">About</a>
-            <a className="m-1 hover:text-primary" href="">Contact</a>
+            <Link className="m-1 hover:text-primary" href="">Home</Link>
+            <Link className="m-1 hover:text-primary" href="">About</Link>
+            <Link className="m-1 hover:text-primary" href="">Contact</Link>
         </nav>
     </header>
     </>
