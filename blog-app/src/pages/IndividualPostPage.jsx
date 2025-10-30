@@ -13,7 +13,7 @@ export default function IndividualPostPage() {
   };
 
   return (
-    <div className="flex flex-col items-center gap-4 p-8 bg-grey min-h-screen">
+    <div className="flex flex-col items-center gap-4 p-8 min-h-screen">
       <BlogBox {...post} />
       <Link to="/" className="text-blue-500 hover:underline">← Back to all posts</Link>
     </div>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useToggle } from "../context/toggleThemeContext";
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -6,6 +7,8 @@ export default function ContactPage() {
     email: "",
     message: ""
   });
+
+  const {light} = useToggle()
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,17 +21,17 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-grey p-8">
-      <h1 className="text-3xl font-bold mb-4">Contact Us</h1>
+    <div className={`flex flex-col items-center justify-center p-8`}>
+      <h1 className={`text-3xl font-bold mb-4 ${light ? "" : "text-primary"}`}>Contact Us</h1>
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col gap-4 w-full max-w-md bg-white p-6 rounded-lg shadow-md"
+        className={`flex flex-col gap-4 w-full max-w-md p-6 rounded-lg shadow-md ${light ? "bg-white" : "bg-darkg"}`}
       >
         <input
           type="text"
           name="name"
           placeholder="Your Name"
-          className="border border-gray-300 p-2 rounded"
+          className={`border p-2 rounded ${light ? "border-gray-300" : "border-primary text-neutral"}`}
           value={formData.name}
           onChange={handleChange}
         />
@@ -36,20 +39,20 @@ export default function ContactPage() {
           type="email"
           name="email"
           placeholder="Your Email"
-          className="border border-gray-300 p-2 rounded"
+          className={`border p-2 rounded ${light ? "border-gray-300" : "border-primary text-neutral"}`}
           value={formData.email}
           onChange={handleChange}
         />
         <textarea
           name="message"
           placeholder="Your Message"
-          className="border border-gray-300 p-2 rounded h-24"
+          className={`border p-2 rounded h-24 ${light ? "border-gray-300" : "border-primary text-neutral"}`}
           value={formData.message}
           onChange={handleChange}
         />
         <button
           type="submit"
-          className="bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition"
+          className={`m-auto h-10 bg-pdark w-[50%] rounded-2xl hover:scale-110 transition-all mb-1 ${light ? "text-white" : "bg-primary text-black"}`}
         >
           Send Message
         </button>

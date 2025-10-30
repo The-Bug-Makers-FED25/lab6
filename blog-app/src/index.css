@@ -5,8 +5,9 @@
     --color-pdark: #00a7ac;
     --color-black: #1a1423;
     --color-grey: #dee7f7;
+    --color-darkg: #302343;
+    --color-darkbg: #22192F;
     --color-offwhite: #eff3fb;
-    --color-black: #1a1423;
     --color-neutral: hsl(220, 60%, 96%);
     --color-white: #ffffff;
 }
