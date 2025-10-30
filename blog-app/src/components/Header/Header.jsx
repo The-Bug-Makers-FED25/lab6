@@ -11,9 +11,9 @@ export default function Header() {
             <img className="w-[150px]" src={logo} alt="bug makers logo" />
         </div>
         <nav className="flex gap-2">
-            <Link className="m-1 hover:text-primary" href="">Home</Link>
-            <Link className="m-1 hover:text-primary" href="">About</Link>
-            <Link className="m-1 hover:text-primary" href="">Contact</Link>
+            <Link className="m-1 hover:text-primary" to="/">Home</Link>
+            <Link className="m-1 hover:text-primary" to="">About</Link>
+            <Link className="m-1 hover:text-primary" to="/contact">Contact</Link>
         </nav>
     </header>
     </>
