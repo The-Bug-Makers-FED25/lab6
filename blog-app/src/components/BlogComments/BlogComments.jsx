@@ -54,7 +54,10 @@ export default function BlogComments ({id}) {
                     <p className={` text-center ${light ? "text-gray-400" : ""}`}>No comments yet, be the first!</p>
                 ) : (
                     comments.map((comment, index) => (
+                       <div>
                         <p key={index}>{comment}</p>
+                        <hr className="m-1"></hr>
+                        </div>
                     ))
                 )}
             </div>
