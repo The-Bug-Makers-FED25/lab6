@@ -9,7 +9,7 @@ export default function Header() {
 
   return (
     <>
-    <header className={`w-full h-fit bg-black text-neutral flex justify-between p-4 items-center ${light ? "bg-pdark" : ""}`}>
+    <header className={`w-full h-[15vh] bg-black text-neutral flex justify-between p-4 items-center ${light ? "bg-pdark" : ""}`}>
         <div>
             <img className="w-[150px]" src={logo} alt="bug makers logo" />
         </div>

@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <Header />
-      <main className={`min-h-[85vh] ${light ? "bg-grey" : "bg-darkbg"}`}>
+      <main className={`overflow-auto min-h-[75vh] ${light ? "bg-grey" : "bg-darkbg"}`}>
         <Routes>
           <Route path="/" element={<BlogPostsPage />} />
           <Route path="/posts/:id" element={<IndividualPostPage />} />
