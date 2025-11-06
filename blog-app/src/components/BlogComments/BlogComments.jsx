@@ -1,42 +1,53 @@
-import { useState } from "react";
+import {useEffect, useState, useCallback} from "react";
 import { useToggle } from "../../context/toggleThemeContext";
+import axios from "axios";
+import BlogCommentsForm from "../BlogCommentsForm/BlogCommentsForm"
 
 
-export default function BlogComments () {
+
+export default function BlogComments ({id}) {
     const {light} = useToggle()
     const [comments, setComments] = useState([]);
-    const [newComment, setNewComment] = useState("");
-    const [newName, setNewName] = useState("");
 
-    const handleCommentChange = (e) => {
-        setNewComment(e.target.value);
-    }
+    const [loading, setLoading] = useState(false); // required for loading solution
+    const [error, setError] = useState(null); // required for error solution
 
-    const handleNameChange = (e) => {
-        setNewName(e.target.value);
-    }
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (newComment.trim() === "" || newName.trim() === "") {
-            return;
+
+    const fetchComments = useCallback(() => { // just copy paste this and change url
+        setLoading(true);
+        setError(null);
+        axios.get(`https://jsonplaceholder.typicode.com/posts/${id}/comments`)
+            .then(response => {
+                setComments(response.data.map(comment => `${comment.name}: ${comment.body}`));
+            })
+            .catch(e => {
+                console.error("Error fetching posts:", e.message);
+                console.log(e.message)
+                setError("Error fetching posts: " + e.message);
+            })
+            .finally(() => setLoading(false));
+    }, [id]);
+
+    useEffect(() => {
+        fetchComments();
+    }, [fetchComments]);
+
+    const handleAddComment = async (commentData) => {
+        try {
+            const response = await axios.post(`https://jsonplaceholder.typicode.com/posts/${id}/comments`, commentData);
+            const newCommentString = `${response.data.name}: ${response.data.body}`;
+            setComments(prevComments => [...prevComments, newCommentString]);
+        } catch (error) {
+            console.error("Error adding comment:", error);
         }
-        const formattedComment = `${newName}: ${newComment}`;
-        setComments([formattedComment, ...comments]);
-        setNewComment("");
-        setNewName("");
     }
-
 
     return (
         <div className={`${light ? "" : "text-neutral"}`}>
-            <form onSubmit={handleSubmit} className={"flex flex-col gap-2 w-full items-center"}>
-                <p>Name:</p>
-                <input type="text" className={`h-10 w-full p-2 border-2 rounded-3xl focus:border-pdark outline-none ${light ? "border-gray-500" : "border-primary"} `} value={newName} onChange={handleNameChange} placeholder=""/>
-                <p>Comment: </p>
-                <input type="text" className={`h-10 w-full p-2 border-2 rounded-3xl focus:border-pdark outline-none ${light ? "border-gray-500" : "border-primary"} `} value={newComment} onChange={handleCommentChange} placeholder=""/>
-                <button type="submit" className={`h-10 bg-pdark w-[50%] rounded-2xl hover:scale-110 transition-all mb-1 ${light ? "text-white" : "bg-primary text-black"}`}>Submit</button>
-            </form>
+            <BlogCommentsForm id={id} onCommentSubmit={handleAddComment}/>
+
+            {loading} {error}
 
             <div className={`h-auto max-h-40 flex flex-col gap-1 p-2 w-full rounded-md overflow-y-auto text-wrap ${light ? "bg-white" : ""}`}>
                 {comments.length === 0 ? (

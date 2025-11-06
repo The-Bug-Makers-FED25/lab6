@@ -95,7 +95,7 @@ export default function IndividualPostPage() {
     content: post.body,
     author: user ? user.name : "Unknown Author",
     date: "11-06-2025",
-    initialComments: ["This post is gas!", "Can’t wait to read more!"],
+    id: post.id,
   };
 
   return (

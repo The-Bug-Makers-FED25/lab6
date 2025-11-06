@@ -1,7 +1,7 @@
 import { useToggle } from "../../context/toggleThemeContext";
 import BlogComments from "../BlogComments/BlogComments";
 
-export function BlogBox ({title, content, author, date, initialComments }) {
+export function BlogBox ({title, content, author, date, id }) {
     const {light} = useToggle()
 
 
@@ -13,6 +13,6 @@ export function BlogBox ({title, content, author, date, initialComments }) {
                 <p className={`${light ? "" : "text-neutral"} font-bold`}>Date: {date ? date : "11-06-2025"}</p>
             </div>
             <h2 className={`${light ? "" : "text-neutral"} text-[1.25rem]`}>Comments:</h2>
-            <BlogComments initialComments={initialComments}/>
+            <BlogComments id={id} />
         </div>
 }
