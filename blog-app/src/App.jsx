@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import LoginPage from "./pages/LoginPage";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import BlogPostsPage from "./pages/BlogPostsPage";
@@ -14,6 +15,7 @@ function App() {
       <Header />
       <main className={`overflow-auto min-h-[75vh] ${light ? "bg-grey" : "bg-darkbg"}`}>
         <Routes>
+          <Route path='/login' element={<LoginPage />} />
           <Route path="/" element={<BlogPostsPage />} />
           <Route path="/posts/:id" element={<IndividualPostPage />} />
           <Route path="/contact" element={<ContactPage />} />
