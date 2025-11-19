@@ -1,22 +1,28 @@
-/* eslint-disable react-refresh/only-export-components */
-// src/context/authStore.js
-import { createContext, useContext, useState } from "react";
+
+import { createContext, useContext, useEffect, useState } from "react";
 
 const ToggleThemeContext = createContext();
 
 export function ToggleProvider({ children }) {
-  const [light, setLight] = useState(true);
+  const [light, setLight] = useState(() => {
+    const saved = localStorage.getItem("theme");
+    return saved ? JSON.parse(saved) : { themeLight: true };
+  });
 
-  // Simple auth helpers
+  useEffect(() => {
+    localStorage.setItem("theme", JSON.stringify(light));    
+  }, [light]);
 
   function toggle() {
-    setLight(!light)
+    setLight({
+      themeLight: !light.themeLight
+    })
   } 
 
   return (
     <ToggleThemeContext.Provider 
      value={{
-        light,
+        light: light.themeLight,
         toggle
      }}>
       {children}
