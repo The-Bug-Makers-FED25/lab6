@@ -13,7 +13,7 @@ export default function HomePage() {
         <div className={"flex flex-row items-center justify-center gap-40"}>
             <div className="flex flex-col justify-center">
                 <h1 className="text-4xl font-bold mb-4 w-80 text-center tracking-wide hover:scale-105 transition-all">
-                Welcome to Our <p className={`hover:scale-120  transition-all hover:tracking-wider  ${light ? "hover:text-[#00a7ac]" : "hover:text-yellow-300"}`}>Blog App!</p></h1>
+                Welcome to Our <p className={`hover:scale-120  transition-all hover:tracking-normal  ${light ? "hover:text-pdark" : "hover:text-yellow-300"}`}>Blog App!</p></h1>
                 <div className="flex gap-4 w-full justify-center">
                     {!username && (
                         <Link
@@ -47,7 +47,7 @@ export default function HomePage() {
 
         <div className={"flex flex-row items-center justify-center pt-20 gap-40 mb-8"}>
             <div className={"flex flex-col hover:scale-110 transition-all"}>
-                <Link className={`text-4xl font-bold mb-4 w-100 text-center tracking-wide hover:scale-120 transition-all hover:underline ${light ? "hover:text-pdark" : "hover:text-primary"}`} to="/contact">Contact Us!</Link>
+                <Link className={`text-4xl font-bold mb-4 w-100 text-center tracking-wide hover:scale-120 transition-all hover:underline hover:tracking-tight ${light ? "hover:text-pdark" : "hover:text-primary"}`} to="/contact">Contact Us!</Link>
                 <p className={"w-100 text-center"}>We'd love a message from you, be it your thoughts of what to change, or a bug you've discovered.</p>
             </div>
 
