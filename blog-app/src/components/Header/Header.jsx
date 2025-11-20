@@ -16,14 +16,12 @@ export default function Header() {
             <img className="w-[150px]" src={logo} alt="bug makers logo" />
         </div>
         <nav className="flex gap-2">
-            {light ? <img src="/sun-2-svgrepo-com.svg" alt="SVG of Sun" onClick={toggle} height={"40px"} width={"40px"}/> :
-                <img src="/cloudy-moon-svgrepo-com.svg" alt="SVG of Moon" onClick={toggle} height={"35px"} width={"35px"}/>}
             <Link className="m-1 hover:text-primary" to="/">Home</Link>
             {username ? <Link className="m-1 hover:text-primary" to="/posts">Blogs</Link> : <></>}
             <Link className="m-1 hover:text-primary" to="/contact">Contact</Link>
-
-
-            {username ? <button className="m-1 hover:text-primary cursor-pointer border-none" onClick={logout}>Logout</button> : <Link className="m-1 hover:text-primary" to="/login">Login</Link>}
+            {username ? <Link className="m-1 hover:text-primary cursor-pointer p-0 border-none" onClick={logout}>Logout</Link> : <Link className="m-1 hover:text-primary" to="/login">Login</Link>}
+            {light ? <img className="cursor-pointer" src="/sun-2-svgrepo-com.svg" alt="SVG of Sun" onClick={toggle} height={"40px"} width={"40px"}/> :
+                <img className="cursor-pointer" src="/cloudy-moon-svgrepo-com.svg" alt="SVG of Moon" onClick={toggle} height={"40px"} width={"40px"}/>}
         </nav>
     </header>
     </>
