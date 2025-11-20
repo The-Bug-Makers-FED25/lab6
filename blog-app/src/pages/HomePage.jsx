@@ -12,7 +12,7 @@ export default function HomePage() {
 
         <div className={"flex flex-row items-center justify-center gap-40"}>
             <h1 className="text-4xl font-bold mb-4 w-80 text-center tracking-wide hover:scale-105 transition-all">
-                Welcome to Our <p className={`hover:scale-120  transition-all hover:tracking-wider  ${light ? "hover:text-[#00a7ac]" : "hover:text-yellow-300"}`}>Blog App!</p></h1>
+                Welcome to Our <p className={`hover:scale-130  transition-all hover:tracking-normal  ${light ? "hover:text-[#00a7ac]" : "hover:text-yellow-300"}`}>Blog App!</p></h1>
 
             <img src="/lovely-man.jpg" className={"h-[225px] hover:scale-105 transition-all"} alt=""/>
         </div>
@@ -39,7 +39,7 @@ export default function HomePage() {
         <div className={"flex flex-row items-center justify-center pt-20 gap-40"}>
             <img src="/monkey.jpg" className={"h-[225px] hover:scale-105 transition-all"} alt=""/>
             <p className="text-lg mb-8 w-100 text-center max-w-xl hover:scale-105 transition-all">
-                <h1 className={`text-4xl font-bold pb-8 ${light ? "hover:text-[#00a7ac]" : "hover:text-primary"} hover:scale-115 transition-all`}>Who are we?</h1>
+                <h1 className={`text-4xl font-bold pb-8 hover:tracking-tighter ${light ? "hover:text-[#00a7ac]" : "hover:text-primary"} hover:scale-125 transition-all`}>Who are we?</h1>
                 The Bug Makers are safe place to write, share, and explore posts.
                 Log in to access blogs or explore more about the project.
             </p>
@@ -47,7 +47,7 @@ export default function HomePage() {
 
         <div className={"flex flex-row items-center justify-center pt-20 gap-40"}>
             <div className={"flex flex-col hover:scale-110 transition-all"}>
-                <Link className={`text-4xl font-bold mb-4 w-100 text-center tracking-wide hover:scale-120 transition-all hover:underline ${light ? "hover:text-[#00a7ac]" : "hover:text-primary"}`} to="/contact">Contact Us!</Link>
+                <Link className={`text-4xl font-bold mb-4 w-100 text-center tracking-wide hover:scale-120 transition-all hover:underline hover:tracking-tight ${light ? "hover:text-[#00a7ac]" : "hover:text-primary"}`} to="/contact">Contact Us!</Link>
                 <p className={"w-100 text-center"}>We'd love a message from you, be it your thoughts of what to change, or a bug you've discovered.</p>
             </div>
 
