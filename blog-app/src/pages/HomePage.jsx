@@ -33,11 +33,11 @@ export default function HomePage() {
                     </Link>
                 </div>
         </div>
-            <img src="/lovely-man.jpg" className={"h-[225px] hover:scale-105 transition-all"} alt=""/>
+            <img src="/lovely-man.jpg" className={"h-[325px] hover:scale-105 transition-all"} alt=""/>
         </div>
 
         <div className={"flex flex-row h-[90vh] items-center justify-center bg-darkg w-[101.9%] gap-40"}>
-            <img src="/monkey.jpg" className={"h-[225px] hover:scale-105 transition-all"} alt=""/>
+            <img src="/monkey.jpg" className={"h-[425px] hover:scale-105 transition-all"} alt=""/>
             <p className="text-lg mb-8 w-100 text-center max-w-xl hover:scale-105 transition-all">
                 <h1 className={`text-4xl font-bold pb-8 ${light ? "hover:text-pdark" : "hover:text-primary"} hover:scale-115 transition-all`}>Who are we?</h1>
                 The Bug Makers are a safe place to write, share, and explore posts.
@@ -51,7 +51,7 @@ export default function HomePage() {
                 <p className={"w-100 text-center"}>We'd love a message from you, be it your thoughts of what to change, or a bug you've discovered.</p>
             </div>
 
-            <img src="/chuz.jpg" className={"h-[225px] hover:scale-105 transition-all"} alt=""/>
+            <img src="/chuz.jpg" className={"h-[325px] hover:scale-105 transition-all"} alt=""/>
         </div>
 
 
