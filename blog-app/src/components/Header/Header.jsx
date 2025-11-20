@@ -20,8 +20,8 @@ export default function Header() {
             {username ? <Link className="m-1 hover:text-primary" to="/posts">Blogs</Link> : <></>}
             <Link className="m-1 hover:text-primary" to="/contact">Contact</Link>
             {username ? <Link className="m-1 hover:text-primary cursor-pointer p-0 border-none" onClick={logout}>Logout</Link> : <Link className="m-1 hover:text-primary" to="/login">Login</Link>}
-            {light ? <img className="cursor-pointer" src="/sun-2-svgrepo-com.svg" alt="SVG of Sun" onClick={toggle} height={"40px"} width={"40px"}/> :
-                <img className="cursor-pointer" src="/cloudy-moon-svgrepo-com.svg" alt="SVG of Moon" onClick={toggle} height={"40px"} width={"40px"}/>}
+            {light ? <img className="cursor-pointer hover:scale-110 transition-all" src="/sun-2-svgrepo-com.svg" alt="SVG of Sun" onClick={toggle} height={"40px"} width={"40px"}/> :
+                <img className="cursor-pointer hover:scale-110 transition-all" src="/cloudy-moon-svgrepo-com.svg" alt="SVG of Moon" onClick={toggle} height={"40px"} width={"40px"}/>}
         </nav>
     </header>
     </>
