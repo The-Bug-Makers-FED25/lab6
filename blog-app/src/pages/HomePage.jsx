@@ -25,7 +25,7 @@ export default function HomePage() {
                         </Link>
                     )}
                     <Link
-                        to={username ? "/posts" : "/login"}
+                        to="/posts"
                         className={`px-6 py-3 rounded-2xl w-[120px] text-center transition-all duration-200
                             ${light ? "bg-pdark text-white hover:scale-110" : "bg-primary text-black hover:scale-110"}`}
                     >
