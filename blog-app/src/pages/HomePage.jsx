@@ -36,7 +36,7 @@ export default function HomePage() {
             <img src="/lovely-man.jpg" className={"h-[280px] md:h-[325px] hover:scale-105 transition-all"} alt=""/>
         </div>
 
-        <div className={"flex flex-col-reverse md:flex-row min-h-[90vh] items-center justify-center bg-darkg w-full gap-12 md:gap-40 px-4"}>
+        <div className={`flex flex-col-reverse md:flex-row min-h-[90vh] items-center justify-center w-full gap-12 md:gap-40 px-4 ${light ? "bg-offwhite" : "bg-darkg"}`}>
             <img src="/monkey.jpg" className={"h-[320px] md:h-[425px] hover:scale-105 transition-all"} alt=""/>
             <div className="text-lg text-center max-w-md md:max-w-xl hover:scale-105 transition-all">
                 <h1 className={`text-4xl font-bold pb-8 ${light ? "hover:text-pdark" : "hover:text-primary"} hover:scale-115 transition-all`}>Who are we?</h1>
