@@ -7,6 +7,7 @@ import IndividualPostPage from "./pages/IndividualPostPage";
 import ContactPage from "./pages/ContactPage";
 import { useToggle } from "./context/toggleThemeContext";
 import { useAuth } from "./context/authContext";
+import HomePage from "./pages/HomePage";
 
 function App() {
   const {light} = useToggle()
@@ -17,8 +18,9 @@ function App() {
       <Header />
       <main className={`overflow-auto min-h-[75vh] ${light ? "bg-grey" : "bg-darkbg"}`}>
         <Routes>
-          <Route path='/' element={<></>} />
-          <Route path='/login' element={<LoginPage />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/login"element={!username ? <LoginPage /> : <Navigate to="/posts" replace />}
+/>
           <Route path="/posts" element={username ? <BlogPostsPage /> : <Navigate to="/login" replace/>} />
           <Route path="/posts/:id" element={username ? <IndividualPostPage /> : <Navigate to="/login" replace/>} />
           <Route path="/contact" element={<ContactPage />} />
