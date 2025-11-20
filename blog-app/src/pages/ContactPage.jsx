@@ -21,7 +21,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className={`flex flex-col items-center justify-center p-8`}>
+    <div className={`flex flex-col items-center justify-center p-8 h-[79vh]`}>
       <h1 className={`text-3xl font-bold mb-4 ${light ? "" : "text-primary"}`}>Contact Us</h1>
       <form
         onSubmit={handleSubmit}

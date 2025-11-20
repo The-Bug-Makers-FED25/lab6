@@ -50,7 +50,7 @@ export default function LoginPage(){
     };
 
   return (
-    <div className={`h-[75vh] flex flex-col items-center justify-center p-8`}>
+    <div className={`h-[79vh] flex flex-col items-center justify-center p-8`}>
       <h1 className={`text-3xl font-bold mb-4 ${light ? "" : "text-primary"}`}>
         {loggingIn ? "Login": "Register"}
       </h1>
