@@ -12,7 +12,7 @@ export function BlogBox ({title, content, author, date, id }) {
                 {author ? <p className={`${light ? "" : "text-neutral"} font-bold`}>Author: {author}</p> : <></>}
                 {date ? <p className={`${light ? "" : "text-neutral"} font-bold`}>Date: {date}</p> : <></>}
             </div>
-            <h2 className={`${light ? "" : "text-neutral"} text-[1.25rem]`}>Comments:</h2>
+            <h2 className={`${light ? "" : "text-neutral"} mb-2 font-bold text-[1.25rem]`}>Comments:</h2>
             <BlogComments id={id} />
         </div>
 }

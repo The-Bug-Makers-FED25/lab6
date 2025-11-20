@@ -37,7 +37,7 @@ export default function BlogComments ({id}) {
         try {
             const response = await axios.post(`https://jsonplaceholder.typicode.com/posts/${id}/comments`, commentData);
             const newCommentString = `${response.data.name}: ${response.data.body}`;
-            setComments(prevComments => [...prevComments, newCommentString]);
+            setComments(prevComments => [newCommentString, ...prevComments]);
         } catch (error) {
             console.error("Error adding comment:", error);
         }
@@ -45,7 +45,7 @@ export default function BlogComments ({id}) {
 
     return (
         <div className={`${light ? "" : "text-neutral"}`}>
-            <BlogCommentsForm id={id} onCommentSubmit={handleAddComment}/>
+            
 
             {loading} {error}
 
@@ -57,10 +57,11 @@ export default function BlogComments ({id}) {
                        <div>
                         <p key={index}>{comment}</p>
                         <hr className="m-1"></hr>
-                        </div>
+                       </div>
                     ))
                 )}
             </div>
+            <BlogCommentsForm id={id} onCommentSubmit={handleAddComment}/>
         </div>
     )
 }
