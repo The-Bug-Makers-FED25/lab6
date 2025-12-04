@@ -5,7 +5,7 @@ export function BlogBox ({title, content, author, date, id }) {
     const {light} = useToggle()
 
 
-    return <div className={`m-auto p-8 w-fit min-w-[45ch] max-w-[80ch] flex flex-col gap-1 rounded-md drop-shadow-2xl ${light ? "bg-white" : "bg-darkg"}`}>
+    return <div className={`m-auto p-8 w-fit min-w-[45ch] max-w-[80ch] hover:scale-102 transition-all flex flex-col gap-1 rounded-md drop-shadow-2xl ${light ? "bg-white" : "bg-darkg"}`}>
             <div className="flex flex-col gap-1.5">
                 <h1 className={`text-pdark text-[2.5rem] font-bold ${light ? "" : "text-primary"}`}>{title}</h1>
                 <p className={`${light ? "" : "text-neutral"}`}>{content}</p>
